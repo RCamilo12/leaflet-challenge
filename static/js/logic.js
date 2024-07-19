@@ -40,7 +40,7 @@ function createMap(earthquakes) {
           for (let i = 0; i < depths.length; i++) {
               div.innerHTML +=
                   '<i style="background:' + getColor(depths[i]) + '"></i> ' +
-                  depths[i] + (depths[i + 1] ? '&ndash;' + depths[i + 1] + '<br>' : '+');
+                  depths[i] + (depths[i] ? '&ndash;' + depths[i] + '<br>' : '+');
           }
   
           return div;
@@ -52,12 +52,12 @@ function createMap(earthquakes) {
   
   // Define getColor function to return color based on depth
 function getColor(depth) {
-  return depth > 100 ? "#d73027" : //Here we add colors from green to red to each possible value of the depth.
-         depth > 70 ? "#fc8d59" :   //Colors were grabbed from https://colorbrewer2.org/#type=sequential&scheme=YlOrRd&n=6
-         depth > 30  ? "#fee08b" :
+  return depth > 100 ? "#fcaf8a" : //Here we add colors from green to red to each possible value of the depth.
+         depth > 70 ? "#fee9ad" :   //Colors were grabbed from https://colorbrewer2.org/#type=sequential&scheme=YlOrRd&n=6
+         depth > 30  ? "#e4f3ad" :
          depth > 10  ? "#d9ef8b" :
-         depth > 5  ? "#91cf60" :
-                       "#1a9850";
+         depth > 5  ? "#b2dd8f" :
+                       "#5eb684";
 }
 
 function createMarkers(response) {
